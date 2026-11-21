@@ -1,0 +1,35 @@
+{
+  "alert_id": "ALT-2026-APT29-003-WHOAMI",
+  "timestamp": "2020-05-01T17:30:26.000Z",
+  "host": {
+    "hostname": "victim-pc.realm.local",
+    "domain": "realm.local",
+    "ip_address": "192.168.0.25"
+  },
+  "detector": {
+    "name": "ICMLDE-SGDClassifier",
+    "version": "1.0",
+    "confidence": 0.912,
+    "raw_anomaly_score": 0.865
+  },
+  "severity": "MEDIUM",
+  "title": "Unauthorized User Privileges Enumeration",
+  "mitre_attack": {
+    "tactic": "Discovery",
+    "technique_id": "T1033",
+    "technique_name": "System Owner/User Discovery"
+  },
+  "seed_entity": {
+    "entity_type": "process",
+    "process_guid": "{APT29-GUID-WHOAMI}",
+    "pid": 4012,
+    "image": "C:\\Windows\\System32\\whoami.exe",
+    "command_line": "whoami /all",
+    "user": "REALM\\victim_user",
+    "parent_process_guid": "{APT29-GUID-PWSH}",
+    "parent_image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  "evidence_context": {
+    "sysmon_event_id": 1
+  }
+}

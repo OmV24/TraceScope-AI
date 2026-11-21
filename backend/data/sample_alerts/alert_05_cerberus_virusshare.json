@@ -1,0 +1,40 @@
+{
+  "alert_id": "ALT-ICMLDE-CERBERUS-001",
+  "timestamp": "2022-06-21T11:45:20.000Z",
+  "host": {
+    "hostname": "win10-malware-lab",
+    "domain": "WORKGROUP",
+    "ip_address": "192.168.56.101"
+  },
+  "detector": {
+    "name": "ICMLDE-XGBoost-Ensemble",
+    "version": "1.0",
+    "confidence": 0.965,
+    "raw_anomaly_score": 0.942
+  },
+  "severity": "CRITICAL",
+  "title": "Cerberus-Trace: Malicious Trojan Binary Execution & Memory Implantation",
+  "mitre_attack": {
+    "tactic": "Execution",
+    "technique_id": "T1204.002",
+    "technique_name": "User Execution: Malicious File"
+  },
+  "seed_entity": {
+    "entity_type": "process",
+    "process_guid": "{F44F4893-45A4-62B3-5C00-000000001E00}",
+    "pid": 2912,
+    "image": "C:\\Users\\pdavies\\AppData\\Local\\Temp\\VirusShare_d461ac0384782d45fe4ec3b5581fcc01.exe",
+    "command_line": "VirusShare_d461ac0384782d45fe4ec3b5581fcc01.exe -run",
+    "user": "win10-malware-lab\\pdavies",
+    "parent_process_guid": "{F44F4893-45A4-62B3-5B00-000000001E00}",
+    "parent_image": "C:\\Python27\\pythonw.exe"
+  },
+  "evidence_context": {
+    "sysmon_event_id": 1,
+    "extra": {
+      "dataset_source": "Cerberus-Trace (NLME)",
+      "iat_hooked": 1,
+      "implanted_pe": 1
+    }
+  }
+}
